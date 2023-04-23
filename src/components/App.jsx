@@ -13,6 +13,7 @@ export class App extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { query } = this.state;
+
     // console.log(prevState.searchQuery);
     if (prevState.query !== query && query) {
       this.getImages();
