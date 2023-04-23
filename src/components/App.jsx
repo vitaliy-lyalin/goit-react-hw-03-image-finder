@@ -22,10 +22,10 @@ export class App extends Component {
     const { query, page, gallery } = this.state;
     fetchImages(query, page).then(data => {
       console.log(data.hits);
-      //   const hits = data.hits;
-      //   this.setState(prev => ({
-      //     gallery: [...prev.gallery, ...hits],
-      //   })).catch(error => error.message);
+      const hits = data.hits;
+      this.setState(prev => ({
+        gallery: [...prev.gallery, ...hits],
+      })).catch(error => error.message);
     });
   };
 
