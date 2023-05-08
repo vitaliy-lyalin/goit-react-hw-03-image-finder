@@ -1,4 +1,14 @@
 import { Component } from 'react';
+import React from 'react';
+// import { FaSearch } from "react-icons/bi";
+
+import {
+  SearchForm,
+  SearchFormButton,
+  SearchFormButtonLabel,
+  SearchFormInput,
+  SearchbarContainer,
+} from './Searchbar.styled';
 
 export default class Searchbar extends Component {
   state = {
@@ -11,29 +21,29 @@ export default class Searchbar extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+
     const value = this.state.value.trim().toLowerCase();
     this.props.onSubmit(value);
   };
 
   render() {
     return (
-      <header className="searchbar">
-        <form className="form" onSubmit={this.handleSubmit}>
-          <button type="submit" className="button">
-            <span className="button-label">Search</span>
-          </button>
+      <SearchbarContainer>
+        <SearchForm onSubmit={this.handleSubmit}>
+          <SearchFormButton type="submit">
+            <SearchFormButtonLabel>Search</SearchFormButtonLabel>
+          </SearchFormButton>
 
-          <input
-            className="input"
+          <SearchFormInput
             type="text"
             autoComplete="off"
             autoFocus
             placeholder="Search images and photos"
-            value={this.state.value}
             onChange={this.handleChange}
+            value={this.state.value}
           />
-        </form>
-      </header>
+        </SearchForm>
+      </SearchbarContainer>
     );
   }
 }
