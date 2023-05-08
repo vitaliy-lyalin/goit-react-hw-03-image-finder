@@ -1,4 +1,4 @@
-import { React, Component } from 'react';
+import React, { Component } from 'react';
 import Searchbar from './Searchbar/Searchbar';
 import { Container } from './App.styled';
 import { fetchImages } from 'services/fetch';
@@ -64,7 +64,8 @@ export class App extends Component {
     this.setState({ isShowModal: false, largeImage: null, tags: null });
   };
 
-  showModal = () => this.setState({ isShowModal: true });
+  showModal = (url, alt) =>
+    this.setState({ isShowModal: true, largeImage: url, tags: alt });
 
   render() {
     const { gallery, isLoading, largeImage, tags, isShowModal } = this.state;

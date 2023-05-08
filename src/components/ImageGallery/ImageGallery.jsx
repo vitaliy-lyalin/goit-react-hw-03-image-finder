@@ -9,7 +9,7 @@ const ImageGallery = ({ gallery, showModal }) => {
           key={id}
           webformatURL={webformatURL}
           tags={tags}
-          showModalClick={() => {
+          onGalleryItemClick={() => {
             showModal(largeImageURL, tags);
           }}
         />
