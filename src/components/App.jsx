@@ -130,7 +130,7 @@ export class App extends Component {
         <Searchbar onSubmit={this.handleSearch} />
         {isLoading && <Loader />}
 
-        {error && <ErrorPage text={`Failed to fetch images: ${error}`} />}
+        {error && <ErrorPage text={` ${error}`} />}
         {gallery.length > 0 && (
           <ImageGallery gallery={gallery} showModal={this.showModal} />
         )}

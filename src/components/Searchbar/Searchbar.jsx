@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import React from 'react';
-// import { FaSearch } from "react-icons/bi";
+import { PropTypes } from 'prop-types';
 
 import {
   SearchForm,
@@ -47,3 +47,7 @@ export default class Searchbar extends Component {
     );
   }
 }
+
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
