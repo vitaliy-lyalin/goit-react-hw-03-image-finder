@@ -31,7 +31,7 @@ export class App extends Component {
     }
     if (gallery !== prevState.gallery && page > 1) {
       setTimeout(() => {
-        window.scrollBy(0, window.innerHeight);
+        window.scrollBy(0, window.innerHeight / 2);
       }, 250);
     }
   }
