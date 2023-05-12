@@ -31,10 +31,7 @@ export class App extends Component {
     }
     if (gallery !== prevState.gallery && page > 1) {
       setTimeout(() => {
-        window.scrollTo({
-          top: document.documentElement.scrollHeight,
-          behavior: 'smooth',
-        });
+        window.scrollBy(0, window.innerHeight);
       }, 250);
     }
   }
